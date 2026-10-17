@@ -1,0 +1,12 @@
+{
+  "literature_months": 12,
+  "literature_unique_days_per_month": true,
+  "literature_total_entries": 365,
+  "rows": 54,
+  "columns": 40,
+  "readable_documents": 151,
+  "scope": "Available shared files and repository history; no claim to unseen private chats",
+  "browser": "1440 and 390 px: table, audit, source reader, storage explanation passed",
+  "public_links_checked": 64,
+  "public_links_failed": 0
+}

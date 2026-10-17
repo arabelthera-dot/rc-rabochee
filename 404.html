@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<title>Переадресация</title>
+<script>
+// Рабочего адреса нет — это страница музея: отправляем на публичный сайт по тому же пути.
+var p = location.pathname.replace(/^\/rc-rabochee\//, "/");
+location.replace("https://arabelthera-dot.github.io/rc-museum-preview" + p + location.search + location.hash);
+</script></head><body><p>Переход на сайт «Русской цивилизации»…</p></body></html>

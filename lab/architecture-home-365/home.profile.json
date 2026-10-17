@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "profile": "arhitektura.home.v3.1",
+  "museum": "arhitektura",
+  "required": {
+    "selectors": [
+      ".top",
+      ".b1",
+      ".b2",
+      ".museum-identity",
+      "#today-calendar",
+      "#today",
+      "#reader",
+      "#atlas",
+      "#school",
+      "#calendar",
+      "#next",
+      "#interests",
+      ".all-stories",
+      "#support-peak",
+      ".museum-slogan",
+      ".portal-identity"
+    ]
+  },
+  "collection": {
+    "enabled": false
+  },
+  "published_catalog": {
+    "enabled": true,
+    "source": "published-stories.json",
+    "derived_count": true,
+    "search": [
+      "title",
+      "question",
+      "region",
+      "century",
+      "material",
+      "space",
+      "action",
+      "duration"
+    ],
+    "filters": [
+      "region",
+      "century",
+      "material",
+      "space",
+      "action",
+      "duration"
+    ],
+    "regression": "pilot-arhitektura/tools/test-home-page.mjs",
+    "page": "catalog.html",
+    "home_limit": 3,
+    "page_size": 12
+  },
+  "score": {
+    "enabled": false
+  },
+  "calendar": {
+    "enabled": true,
+    "selector": "#calbox",
+    "source": "../../muzei/arhitektura/calendar-data.js"
+  },
+  "acceptance": {
+    "script": "standards-check.js",
+    "header_order": [
+      "header.top",
+      ".museum-identity",
+      ".chrome-row"
+    ],
+    "calendar_last": true,
+    "support_engine": "museum-support.js",
+    "support_max_fraction": 0.3333333333333333
+  }
+}

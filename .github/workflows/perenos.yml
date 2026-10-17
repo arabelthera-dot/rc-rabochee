@@ -1,0 +1,23 @@
+# Мост до переписывания инструментов (переезд, шаг 5): служебные папки старого main
+# rc-museum-preview -> сюда. Публичные репозитории — минуты бесплатные.
+# Выключатель: переменная репозитория RC_PERENOS=0. Удалить вместе с tools/perenos.sh.
+name: perenos
+on:
+  schedule: [{cron: "*/15 * * * *"}]
+  workflow_dispatch:
+permissions: {contents: write}
+concurrency: {group: perenos, cancel-in-progress: false}
+jobs:
+  perenos:
+    if: vars.RC_PERENOS != '0'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: bash tools/perenos.sh
+      - run: |
+          git add -A
+          git diff --cached --quiet && exit 0
+          git -c user.name=github-actions[bot] -c user.email=41898282+github-actions[bot]@users.noreply.github.com \
+            commit -qm "perenos: рабочие страницы из rc-museum-preview main"
+          git push -q
