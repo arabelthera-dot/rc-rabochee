@@ -1,6 +1,6 @@
 # Мост до переписывания инструментов (переезд, шаг 5): служебные папки старого main
 # rc-museum-preview -> сюда. Публичные репозитории — минуты бесплатные.
-# Выключатель: переменная репозитория RC_PERENOS=0. Удалить вместе с tools/perenos.sh.
+# Выключатель: переменная репозитория RC_PERENOS=vykl. Удалить вместе с tools/perenos.sh.
 name: perenos
 on:
   schedule: [{cron: "*/15 * * * *"}]
@@ -9,7 +9,7 @@ permissions: {contents: write}
 concurrency: {group: perenos, cancel-in-progress: false}
 jobs:
   perenos:
-    if: vars.RC_PERENOS != '0'
+    if: vars.RC_PERENOS != 'vykl'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
